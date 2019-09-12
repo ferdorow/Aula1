@@ -4,16 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilizandoWhile
+namespace ForWhile
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Informa a palavra de busca");
-            var wordCount = FindByFor(Console.ReadLine());
+            Console.WriteLine(TextContent());
 
         }
-        private static int FindByFor (string wordFind)
+
+        private static string TextContent()
+        {
+            return "Fernando";
+
+        }
+
     }
 }

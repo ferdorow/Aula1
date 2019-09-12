@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UtilizandoWhile
+namespace WhileTeste
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Informa a palavra de busca");
-            var wordCount = FindByFor(Console.ReadLine());
-
         }
-        private static int FindByFor (string wordFind)
     }
 }
