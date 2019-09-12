@@ -10,10 +10,15 @@ namespace UtilizandoWhile
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Informa a palavra de busca");
-            var wordCount = FindByFor(Console.ReadLine());
+            var count = 0;
 
+            while (count < 1000000000)
+            {
+                count += 5;
+            }
+
+            Console.WriteLine("Terminou o loop");
+            Console.ReadKey();
         }
-        private static int FindByFor (string wordFind)
     }
 }
