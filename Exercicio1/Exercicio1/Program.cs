@@ -11,7 +11,8 @@ namespace Exercicio1
         static void Main(string[] args)
         {
             Console.WriteLine("Seja bem vindo ao fim de semana! O chopp está liberado!");
-            Console.WriteLine("Pressione qualquer tecla para sair")
+
+            Console.WriteLine("Pressione qualquer tecla para sair");
             Console.ReadKey();
 
         }
