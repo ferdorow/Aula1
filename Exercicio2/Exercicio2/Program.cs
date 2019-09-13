@@ -10,7 +10,19 @@ namespace Exercicio2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Seja Bem Vindo");
+            string nome;
+
+            Console.WriteLine("Olá!");
+            Console.WriteLine("Qual o seu nome?");
+            nome = Console.ReadLine();
+            Console.WriteLine($"Seja bem vindo {nome}!" );
+           
+
+            Console.ReadKey();
+
+           
+
+
 
         }
     }
