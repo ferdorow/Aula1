@@ -14,10 +14,11 @@ namespace ListaCarros
         }
         private static void CarSplitList()
         {
+            //variaveis contendo o conteudo da lista e o conteudo da lista separado
             var conteudo = "carro:Gol,marca:volkswagen,ano:2000;carro:Jetta,marca:volkswagen,ano:2012;carro:Sportage,marca:Kia,ano:2011;carro:Hb20,marca:hyundai,ano:2015";
             var listaDeInformacoes = conteudo.Split(';');
 
-            Console.WriteLine("Carros cadastrados no sistema");
+            Console.WriteLine("Carros cadastrados no sistema"); 
 
             foreach (var item in listaDeInformacoes)
             {
