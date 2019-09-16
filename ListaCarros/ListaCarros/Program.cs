@@ -10,45 +10,38 @@ namespace ListaCarros
     {
         static void Main(string[] args)
         {
-            ConsultaDeCarros();
+            ConsultaDePessoas();
         }
-        private static void ConsultaDeCarros()
+        private static void ConsultaDePessoas()
         {
             //variaveis contendo o conteudo da lista e o conteudo da lista separado
-            var conteudo = "carro:Gol,marca:volkswagen,ano:2000;carro:Jetta,marca:volkswagen,ano:2012;carro:Sportage,marca:Kia,ano:2011;carro:Hb20,marca:hyundai,ano:2015";
-            var listaDeInformacoes = conteudo.Split(';');
+            var conteudo = "nome:Giomar,idade:17;nome:Edson,idade:19;nome:Ericledson,idade:75;nome:Junior,idade:45";
+            var cadastro = conteudo.Split(';');
 
-            Console.WriteLine("Carros cadastrados no sistema:");
+            Console.WriteLine("Pessoas cadastradas no sistema:");
 
-            foreach (var item in listaDeInformacoes)
+            foreach (var item in cadastro)
             {
                 Console.WriteLine(item.Split(',')[0]); // escreve os nomes da lista na posiçao 0
             }
 
-            Console.WriteLine("Informe um nome de carro do sistema:");
+            Console.WriteLine("Informe um nome de pessoa do sistema:");
             var nomeBusca = Console.ReadLine();
 
-            foreach (var item in listaDeInformacoes)
+            foreach (var item in cadastro)
             {
                 var informacoesSplit = item.Split(',');    //separando na virgula
 
-                var carro = informacoesSplit[0].Split(':')[1];         //separando nos :
-                var marca = informacoesSplit[1].Split(':')[1];
-                var ano = informacoesSplit[2].Split(':')[1];
-
-                if (carro == nomeBusca)
-
-                {
-                    Console.WriteLine($"O {carro} da {marca} foi fabricado em {ano}");
-                }
-
+                var nome = informacoesSplit[0].Split(':')[1];         //separando :
+                var idade = int.Parse(informacoesSplit[1].Split(':')[1]);
+                
+                if (idade >= 18)
+                    Console.WriteLine($"O nome do usuario é {nome} e a sua idade é {idade} anos:");
+                                              
             }
             Console.ReadKey();
 
-
-
-
-
+                        
         }
     }
 }
