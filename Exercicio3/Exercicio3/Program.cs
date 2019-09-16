@@ -22,7 +22,6 @@ namespace Exercicio3
                 Console.WriteLine($"Parabéns {nome} você ja está na fase adulta ");
 
             else
-
                 Console.WriteLine($"Calma {nome} tudo ao seu tempo logo você terá 18 anos de idade.");
 
             Console.ReadKey();
