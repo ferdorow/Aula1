@@ -10,15 +10,14 @@ namespace IniciandoForeach
     {
         static void Main(string[] args)
         {
-            ForeachComSplit2();
+            ForeachComSplitLista();
 
         }
 
         private static void IniciandoForEach()
         {
-
-
-            Console.WriteLine("Informe a palavra pra realizar a busca");                                                                                  
+            
+            Console.WriteLine("Informe a palavra pra realizar a busca");
             var conteudoDoTexto = Console.ReadLine();
 
 
@@ -68,6 +67,47 @@ namespace IniciandoForeach
             Console.ReadKey();
 
         }
+
+        private static void ForeachComSplitLista()
+        {
+            var conteudo = "nome:Fernando,idade:27;nome:Giomar,idade:75;nome:Eusebio,idade:29";
+            var listaDeInformacoes = conteudo.Split(';');
+
+            Console.WriteLine("Usuarios cadastrados no sistema");
+
+            foreach (var item in listaDeInformacoes)
+            {
+                Console.WriteLine(item.Split(',')[0]);
+
+            }
+
+            Console.WriteLine("Informe um nome do sistema:");
+            var nomeBusca = Console.ReadLine();
+
+            foreach (var item in listaDeInformacoes)
+            {
+                var informacoesSplit = item.Split(',');
+
+                var nome = informacoesSplit[0].Split(':')[1];
+                var idade = informacoesSplit[1].Split(':')[1];
+
+                if (nome == nomeBusca)
+
+                {
+                    Console.WriteLine($"O {nome} esta com a {idade} anos de idade.");
+                }
+                
+            }
+            Console.ReadKey();
+
+
+
+
+
+        }
+
+
+
     }
 }
 
