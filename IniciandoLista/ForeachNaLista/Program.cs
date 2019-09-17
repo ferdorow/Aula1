@@ -78,28 +78,44 @@ namespace ForeachNaLista
             minhaLista.ForEach(meuDecimal => Console.WriteLine(meuDecimal.ToString("C") +" "+ FormataNumeroDecimalEmDolar(meuDecimal)+"  "+ FormataRealemYen(meuDecimal)+" "+ FormataRealemEuro(meuDecimal)+"  "+FormataRealemBitcoin(meuDecimal)));
 
         }
-
+        /// <summary>
+        /// Metodo que converte o meu numero em real para dolar
+        /// </summary>
+        /// <param name="meuNumero"></param>
+        /// <returns> Retorna o valor formatado em dolar
         private static string FormataNumeroDecimalEmDolar(double meuNumero)
         {
             return (meuNumero / 4.5008).ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
 
         }
-
+        /// <summary>
+        /// Metodo que converte o numero em real para Yen
+        /// </summary>
+        /// <param name="meuNumero"></param>
+        /// <returns> Retorna o numero formatado em Yen
         private static string FormataRealemYen(double meuNumero)
         {
             return (meuNumero / 0.038).ToString("C", CultureInfo.CreateSpecificCulture("ja-JP"));
 
         }
-
+        /// <summary>
+        /// Metodo que converte o numero em real para Euro
+        /// </summary>
+        /// <param name="meuNumero"></param>
+        /// <returns> Retorna o numero formatado em Euro
         private static string FormataRealemEuro(double meuNumero)
         {
             return (meuNumero / 4.53).ToString("C", CultureInfo.CreateSpecificCulture("de-DE"));
 
         }
-
+        /// <summary>
+        /// Metodo que converte o numero em real para Bitcoin
+        /// </summary>
+        /// <param name="meuNumero"></param>
+        /// <returns> Retorna o numero formatado em Bitcoin
         private static string FormataRealemBitcoin(double meuNumero)
         {
-            return (meuNumero / 41.853).ToString("C10").Replace("$", "BTC");
+            return (meuNumero / 41853.32).ToString("C10").Replace("$", "BTC");
 
         }
 
