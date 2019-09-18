@@ -4,52 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CrazyProject
+namespace MinhaBiblioteca
 {
-    public class Program
+    public class MostrarListas
     {
-        static void Main(string[] args)
-        {
-            ArvoreTosquera();
-            AreaQuadrado();
-            ListaDeCervas();
-            CarList();
-        }
-
-
-        public static void ArvoreTosquera()
-        {
-            Console.WriteLine("     /\\\\    ");
-            Console.WriteLine("    //**\\\\  ");
-            Console.WriteLine("   //****\\\\  ");
-            Console.WriteLine("  //****** \\\\ ");
-            Console.WriteLine("      ||     ");
-            Console.WriteLine("      ||     ");
-
-            Console.ReadLine();
-            Console.Clear();
-
-
-        }
-        public static void AreaQuadrado()
-        {
-            double area = 0;
-            double lado = 0;
-
-            Console.WriteLine("Calculo da area de um quadrado...Entre com o lado do quadrado:");
-            lado = double.Parse(Console.ReadLine());
-
-            area = lado * lado;
-
-            Console.WriteLine($"A area do quadrado é de {area} metros quadrados");
-            Console.ReadKey();
-            Console.Clear();
-        }
-
         public static void ListaDeCervas()
         {
             var minhaLista = new List<string>();
-            Console.WriteLine("A lista de cervejas contém as seguintes marcas:");
+            Console.WriteLine("A lista de cervajas contém as seguintes marcas:");
             Console.WriteLine("----------------------------------------------");
 
             minhaLista.Add("Brahma");
@@ -63,6 +25,7 @@ namespace CrazyProject
             Console.ReadKey();
             Console.Clear();
 
+            
         }
 
         public static void CarList()
