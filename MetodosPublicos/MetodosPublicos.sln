@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessandoInformacao", "Aces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaBiblioteca", "MinhaBiblioteca\MinhaBiblioteca.csproj", "{92AF0229-4236-40DA-96C2-2B56750C573E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcessandoDllDoAmiguinho", "AcessandoDllDoAmiguinho\AcessandoDllDoAmiguinho.csproj", "{12137357-707A-44E7-A3FC-32CDE3E29C71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{92AF0229-4236-40DA-96C2-2B56750C573E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92AF0229-4236-40DA-96C2-2B56750C573E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92AF0229-4236-40DA-96C2-2B56750C573E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12137357-707A-44E7-A3FC-32CDE3E29C71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12137357-707A-44E7-A3FC-32CDE3E29C71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12137357-707A-44E7-A3FC-32CDE3E29C71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12137357-707A-44E7-A3FC-32CDE3E29C71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
