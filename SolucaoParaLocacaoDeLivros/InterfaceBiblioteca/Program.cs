@@ -36,6 +36,7 @@ namespace InterfaceBiblioteca
             Console.WriteLine("1 - Listar Usuários");
             Console.WriteLine("2 - Listar Livros");
             Console.WriteLine("3 - Cadastrar Livro");
+            Console.WriteLine("4 - Fazer Logoff");
             Console.WriteLine("0 - Sair");
 
             //Aqui vamos pegar o numero digitado
@@ -52,8 +53,9 @@ namespace InterfaceBiblioteca
                 case 3:
                     break;
                 case 4:
-
-                    
+                    while (!RealizarLoginSistema())
+                        Console.WriteLine("Login e senha inválidos");
+                    break;
                 case 0: return;
                 default:
                     break;
