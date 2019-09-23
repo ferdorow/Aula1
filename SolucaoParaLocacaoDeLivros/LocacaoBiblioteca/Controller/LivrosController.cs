@@ -8,22 +8,41 @@ using System.Threading.Tasks;
 namespace LocacaoBiblioteca.Controller
 {
     public class LivrosController
+        
     {
-        public List<Livro> Livros { get; set; }
+        private int idCount = 0;
+        /// <summary>
+        /// Metodo construtor que prepara o terreno para ja iniciar  com livros pré cadastrados
+        /// </summary>
         public LivrosController()
         {
-            Livros = new List<Livro>();
+            //criamos uma lista de livros em memoria
+            ListadDeLivros = new List<Livro>();
 
-            Livros.Add(new Livro()
+            ListadDeLivros.Add(new Livro()
             {
-                Nome = "Meu primeiro Livro"
+                Nome = "Meu primeiro Livro",
+                Id = idCount++
             });
 
-            Livros.Add(new Livro()
+            ListadDeLivros.Add(new Livro()
             {
-                Nome = "Meu segundo Livro"
+                Nome = "Meu segundo Livro",
+                Id = idCount++
             });
-        }      
-                         
+        }
+        //Aqui crio uma propriedade para acessar a lista de livros disponiveis
+        private List<Livro> ListadDeLivros { get; set; }
+
+        public void AdicionarLivro(Livro parametroLivro)
+        {
+            parametroLivro.Id = idCount++;
+            ListadDeLivros.Add(parametroLivro);
+        }
+        public List<Livro> RetornaListaDeLivros()
+        {
+            return ListadDeLivros;
+        }
+
     }
 }
