@@ -8,41 +8,38 @@ using System.Threading.Tasks;
 namespace LocacaoBiblioteca.Controller
 {
     public class LivrosController
-        
+
     {
-        private int idCount = 0;
+
         /// <summary>
         /// Metodo construtor que prepara o terreno para ja iniciar  com livros pré cadastrados
         /// </summary>
-        public LivrosController()
-        {
-            //criamos uma lista de livros em memoria
-            ListadDeLivros = new List<Livro>();
+        LocacaoContext contextDB = new LocacaoContext();
 
-            ListadDeLivros.Add(new Livro()
-            {
-                Nome = "Meu primeiro Livro",
-                Id = idCount++
-            });
-
-            ListadDeLivros.Add(new Livro()
-            {
-                Nome = "Meu segundo Livro",
-                Id = idCount++
-            });
-        }
         //Aqui crio uma propriedade para acessar a lista de livros disponiveis
-        private List<Livro> ListadDeLivros { get; set; }
+
 
         public void AdicionarLivro(Livro parametroLivro)
         {
-            parametroLivro.Id = idCount++;
-            ListadDeLivros.Add(parametroLivro);
+            parametroLivro.Id = contextDB.IdContadorLivros++;
+            contextDB.ListaDeLivros.Add(parametroLivro);
         }
         public List<Livro> RetornaListaDeLivros()
         {
-            return ListadDeLivros;
+            //retorna agora somente a lista de livros ativos com a expressão "Where(x => x.Ativo)"
+            return contextDB.ListaDeLivros.Where(x => x.Ativo).ToList<Livro>();
         }
-
+        /// <summary>
+        /// Metoodo para desativar o registro de livro pelo Id
+        /// </summary>
+        /// <param name="identificadoID">Id do livro a ser desativado
+        public void RemoverLivroPorId(int identificadoID)
+        {
+            //FirstOrDefault retorna null em caso de não encontrar um registro
+            var livro = contextDB.ListaDeLivros.FirstOrDefault(x => x.Id == identificadoID);
+            //Tratamento do valor quando ele não encontrar um livro com ID
+            if (livro != null)
+                livro.Ativo = false;
+        }
     }
 }

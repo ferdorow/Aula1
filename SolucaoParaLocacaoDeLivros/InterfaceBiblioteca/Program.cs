@@ -45,7 +45,8 @@ namespace InterfaceBiblioteca
                 Console.WriteLine("3 - Cadastrar Livro");
                 Console.WriteLine("4 - Cadastrar Usuario");
                 Console.WriteLine("5 - Remover Usuario");
-                Console.WriteLine("6 - Fazer Logoff");
+                Console.WriteLine("6 - Remover Livro");
+                Console.WriteLine("7 - Trocar Usuário");
                 Console.WriteLine("0 - Sair");
 
                 //Aqui vamos pegar o numero digitado
@@ -72,6 +73,9 @@ namespace InterfaceBiblioteca
                         RemoverUsuarioPorId();
                         break;
                     case 6:
+                        RemoverLivroPorId ();
+                        break;
+                    case 7:
                         while (!RealizarLoginSistema())
                             Console.WriteLine("Login e senha inválidos");
                         break;
@@ -97,10 +101,25 @@ namespace InterfaceBiblioteca
             usuarioController.RemoverUsuarioPorId(usuarioID);
 
             ///Informamos que o usuario foi desativado com sucesso
-            Console.WriteLine("Usuario Desativado com Sucesso");
+            Console.WriteLine("Usuario Removido com Sucesso!");
             Console.ReadKey();
-
+            
         }
+
+        private static void RemoverLivroPorId()
+        {
+            Console.WriteLine("Remover um Livro pelo id no sistema");
+
+            MostrarLivros();
+
+            Console.WriteLine("Informe o ID para desativar o livro do sistema:");
+            var livroId = int.Parse(Console.ReadLine());
+            livroController.RemoverLivroPorId(livroId);
+
+            Console.WriteLine("Livro Removido com Sucesso!");
+            Console.ReadKey();
+        }
+
         /// <summary>
         /// /Metodo que adiciona dentro de nossa lista um novo registro de livro
         /// </summary>
@@ -161,7 +180,7 @@ namespace InterfaceBiblioteca
         }
         private static void MostrarLivros()
         {
-            livroController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"Nome do livor: {item.Nome} id:{item.Id}"));
+            livroController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"Nome do livro: {item.Nome} id:{item.Id}"));
             Console.ReadKey();
         }
         private static void MostrarUsuarios()

@@ -18,45 +18,33 @@ namespace LocacaoBiblioteca.Controller
 {
     public class UsuarioController
     {
-        private int idContador = 0;
+        private LocacaoContext contextDB = new LocacaoContext();
         public bool LoginSistema(Usuario usuarios)
         {
-            return ListaDeUsuarios.Exists(x =>
+            return contextDB.ListaDeUsuarios.Exists(x =>
             x.Login == usuarios.Login
             && x.Senha == usuarios.Senha);
         }
-        private List<Usuario> ListaDeUsuarios { get; set; }
+
         /// <summary>
         /// Metodo usado para adicionar um novo usuario no sistema
         /// </summary>
         /// <param name"= usuario"> Novo usuario que sera adicionado"
         public UsuarioController()
         {
-            ListaDeUsuarios = new List<Usuario>();
 
-            ListaDeUsuarios.Add(new Usuario()
-            {
-                Login = "admin",
-                Senha = "admin",
-                Id = idContador++            });
-            ListaDeUsuarios.Add(new Usuario()
-            {
-                Login = "hbsis",
-                Senha = "proway",
-                Id = idContador++
-            });
 
         }
 
-        public void AdicionarUsuario(Usuario parametroUsuario)
+        public void AdicionarUsuario(Usuario usuario)
         {
-            parametroUsuario.Id = idContador++;
-            ListaDeUsuarios.Add(parametroUsuario);
+            usuario.Id = contextDB.IdContadorUsuarios++;
+            contextDB.ListaDeUsuarios.Add(usuario);
         }
         public List<Usuario> RetornaListaDeUsuario()
         {
             //retorna agora somente a lista de usuarios ativos com a expressão "Where(x => x.Ativo)"
-            return ListaDeUsuarios.Where(x => x.Ativo).ToList<Usuario>();
+            return contextDB.ListaDeUsuarios.Where(x => x.Ativo).ToList<Usuario>();
         }
         //<summary>
         /// <summary>
@@ -68,7 +56,9 @@ namespace LocacaoBiblioteca.Controller
             //Aqui usamos o metodo FirstOrDefault para localizarnosso usuario dentro da lista
             //com isso consegui desativar as propriedades desativar registros
 
-            ListaDeUsuarios.FirstOrDefault(x => x.Id == identificadoID).Ativo = false;
+            var usuario = contextDB.ListaDeUsuarios.FirstOrDefault(x => x.Id == identificadoID);
+            if (usuario != null)
+                usuario.Ativo = false;
         }
     }
 }
