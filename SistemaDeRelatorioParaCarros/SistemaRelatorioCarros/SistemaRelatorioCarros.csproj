@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B8A990B3-2E99-46FE-A10F-B68C08C49446}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>InterfaceRelatorioDeVendas</RootNamespace>
-    <AssemblyName>InterfaceRelatorioDeVendas</AssemblyName>
+    <ProjectGuid>{E675162B-83A9-40E9-A70B-D44E2F2F8334}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SistemaRelatorioCarros</RootNamespace>
+    <AssemblyName>SistemaRelatorioCarros</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,13 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\VendasController.cs" />
-    <Compile Include="Model\SistemaDeVendaContext.cs" />
-    <Compile Include="Model\Veiculo.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Model\Venda.cs" />
+    <Compile Include="Model\SistemaVendasContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
