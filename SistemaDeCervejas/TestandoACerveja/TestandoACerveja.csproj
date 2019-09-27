@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6D7F96B-ACF2-444B-BB65-69FF28A208B3}</ProjectGuid>
+    <ProjectGuid>{F6462E33-8D98-46F3-91C0-1C661ECFE48B}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ListarCarrosDoAmigo</RootNamespace>
-    <AssemblyName>ListarCarrosDoAmigo</AssemblyName>
+    <RootNamespace>TestandoACerveja</RootNamespace>
+    <AssemblyName>TestandoACerveja</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SistemaCarros">
-      <HintPath>\\svprwy001\alunos\hbsis\DllsComComentarios\9\SistemaCarros.dll</HintPath>
+    <Reference Include="ListagemDeCervejas">
+      <HintPath>..\ListagemDeCervejas\bin\Debug\ListagemDeCervejas.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

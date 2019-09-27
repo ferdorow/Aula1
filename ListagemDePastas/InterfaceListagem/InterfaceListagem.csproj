@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D6D7F96B-ACF2-444B-BB65-69FF28A208B3}</ProjectGuid>
+    <ProjectGuid>{04C83B34-FF1B-4060-85FA-5085DFFE3E87}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ListarCarrosDoAmigo</RootNamespace>
-    <AssemblyName>ListarCarrosDoAmigo</AssemblyName>
+    <RootNamespace>InterfaceListagem</RootNamespace>
+    <AssemblyName>InterfaceListagem</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -18,10 +18,12 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>\\svprwy001\alunos\hbsis\DllsComComentarios\0\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,8 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="SistemaCarros">
-      <HintPath>\\svprwy001\alunos\hbsis\DllsComComentarios\9\SistemaCarros.dll</HintPath>
+    <Reference Include="DllPastaWin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\svprwy001\alunos\hbsis\DllsComComentarios\0\DllPastaWin.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
