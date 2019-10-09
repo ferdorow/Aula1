@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoCelulares", "CatalogoCelulares\CatalogoCelulares.csproj", "{DB63D966-EB0C-463C-92CC-042E04D69500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellDu", "CellDu\CellDu.csproj", "{D74A3E95-BB65-47B0-9D13-626ADD1EF5F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DB63D966-EB0C-463C-92CC-042E04D69500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB63D966-EB0C-463C-92CC-042E04D69500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB63D966-EB0C-463C-92CC-042E04D69500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB63D966-EB0C-463C-92CC-042E04D69500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D74A3E95-BB65-47B0-9D13-626ADD1EF5F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D74A3E95-BB65-47B0-9D13-626ADD1EF5F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D74A3E95-BB65-47B0-9D13-626ADD1EF5F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D74A3E95-BB65-47B0-9D13-626ADD1EF5F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B1727F2-6BA6-45AE-85D7-8B9D449721A7}
+	EndGlobalSection
+EndGlobal
