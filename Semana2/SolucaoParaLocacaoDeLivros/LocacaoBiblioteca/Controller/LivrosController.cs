@@ -16,30 +16,47 @@ namespace LocacaoBiblioteca.Controller
         /// </summary>
         LocacaoContext contextDB = new LocacaoContext();
 
-        //Aqui crio uma propriedade para acessar a lista de livros disponiveis
+        public IQueryable<Livro> GetLivros()
+        {
+            return contextDB 
+                .Livros 
+                .Where(x => x.Ativo == true); 
+        }
 
 
-        public void AdicionarLivro(Livro parametroLivro)
+        public void AdicionarLivro(Livro item)
         {
-            parametroLivro.Id = contextDB.IdContadorLivros++;
-            contextDB.ListaDeLivros.Add(parametroLivro);
+            contextDB.Livros.Add(item); 
+            contextDB.SaveChanges(); 
+            
         }
-        public List<Livro> RetornaListaDeLivros()
-        {
-            //retorna agora somente a lista de livros ativos com a expressão "Where(x => x.Ativo)"
-            return contextDB.ListaDeLivros.Where(x => x.Ativo).ToList<Livro>();
-        }
-        /// <summary>
-        /// Metoodo para desativar o registro de livro pelo Id
-        /// </summary>
-        /// <param name="identificadoID">Id do livro a ser desativado
+        
         public void RemoverLivroPorId(int identificadoID)
         {
-            //FirstOrDefault retorna null em caso de não encontrar um registro
-            var livro = contextDB.ListaDeLivros.FirstOrDefault(x => x.Id == identificadoID);
-            //Tratamento do valor quando ele não encontrar um livro com ID
-            if (livro != null)
+            
+            var livro = contextDB.Livros.FirstOrDefault(x => x.Id == identificadoID);
+                if (livro != null)
                 livro.Ativo = false;
         }
+        public bool AtualizarLivro(Livro item)
+        {
+            var Livro = //Definimos uma variavel para o livro
+                contextDB //Usamos o banco de dados
+                .Livros //Nossa tabela que tem os livros
+                .FirstOrDefault //Buscamos em nossa tabela o livro
+                (x => x.Id == item.Id); //Regra para realizar a busca
+                       
+            if (Livro == null) 
+                return false; 
+            else
+            {                
+                Livro.DataAlteracao = DateTime.Now; 
+            }
+            
+            contextDB.SaveChanges(); 
+
+            return true; 
+        }
+
     }
 }

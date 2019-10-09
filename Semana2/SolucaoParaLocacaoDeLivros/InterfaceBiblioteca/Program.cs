@@ -10,9 +10,8 @@ namespace InterfaceBiblioteca
 {
     class Program
     {   //Instanciamos "Carregamos para a memoria nosso controlador dos livros
-        static LivrosController livroController = new LivrosController();
-        //Instanciamos "Carregamos para a memoria nosso controlador dos usuarios
-        static UsuarioController usuarioController = new UsuarioController();
+        static LivrosController livros = new LivrosController();
+        
         static void Main(string[] args)
 
         {
@@ -135,7 +134,7 @@ namespace InterfaceBiblioteca
             //Com isso temos disponivel nele ferramentas que nos ajudam a realizar as tarefas
             //Como adicionar um item  a nossa lista de livros
 
-            livroController.AdicionarLivro(new Livro()
+            livros.AdicionarLivro(new Livro()
             {
                 //Aqui atribuimos o nome que demos ao livro na propriedade do nosso livro
                 //com o sinal de aoenas im "=" temos atribuição, passagem de valor
@@ -180,33 +179,54 @@ namespace InterfaceBiblioteca
         }
         private static void MostrarLivros()
         {
-            livroController.RetornaListaDeLivros().ForEach(item => Console.WriteLine($"Nome do livro: {item.Nome} id:{item.Id}"));
-            Console.ReadKey();
+            Console.WriteLine("--Mostrar Livro--");
+
+            livros.GetLivros() 
+                .ToList<Livro>() 
+                .ForEach(x => 
+                Console.WriteLine($"Id: {x.Id}, Nome: {x.Nome}"));
         }
         private static void MostrarUsuarios()
         {
             usuarioController.RetornaListaDeUsuario().ForEach(item => Console.WriteLine($" id {item.Id} Usuário: {item.Login}"));
             Console.ReadKey();
         }
-        private static void AdicionarUsuario()
-        {
+       
 
-            Console.WriteLine("Nome do Usuario:");
-            var nomeDousuario = Console.ReadLine();
-
-            Console.WriteLine("Informe a senha");
-            var senhaDousuario = Console.ReadLine();
-
-            usuarioController.AdicionarUsuario(new Usuario()
-
+            public static void AtualizarLivro()
             {
-                Login = nomeDousuario,
-                Senha = senhaDousuario
+                //Apresentamos a tela em que estamos
+                Console.WriteLine("--Atualizar Livros--");
 
-            });
-            Console.WriteLine("Usuario cadastrado com sucesso");
-            Console.ReadKey();
+            MostrarLivros();
+                            
+                Console.WriteLine("Informe o Id para alteração de registro.");
+                
+                var livroId = int.Parse(Console.ReadLine());
+                            
+                var livro = livros //Nossa controller
+                    .GetLivros() //Obtemos os celulares
+                    .FirstOrDefault(x => x.Id == livroId); //Laço de repetição para mostrarcada celular
 
+
+                if (livro == null)
+                {
+                    Console.WriteLine("Id Informado inválido");
+                    return;
+                }
+
+                Console.WriteLine("Informe a Marca do celular");
+                livro.Nome = Console.ReadLine();
+                         
+
+                var resultado = livros.
+                    AtualizarLivro(livro);
+
+                if (resultado)
+                    Console.WriteLine("Livro atualizado com sucesso");
+                else
+                    Console.WriteLine("Erro ao atualizar livro");
+            }
         }
     }
 }
