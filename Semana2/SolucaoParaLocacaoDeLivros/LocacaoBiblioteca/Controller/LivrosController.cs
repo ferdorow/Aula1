@@ -10,20 +10,17 @@ namespace LocacaoBiblioteca.Controller
     public class LivrosController
 
     {
-
-        /// <summary>
-        /// Metodo construtor que prepara o terreno para ja iniciar  com livros pré cadastrados
-        /// </summary>
+        
         LocacaoContext contextDB = new LocacaoContext();
 
+        //Iqueryable prepara e o GetLivros lista de fato
         public IQueryable<Livro> GetLivros()
         {
             return contextDB 
                 .Livros 
                 .Where(x => x.Ativo == true); 
         }
-
-
+        
         public void AdicionarLivro(Livro item)
         {
             contextDB.Livros.Add(item); 
@@ -37,20 +34,21 @@ namespace LocacaoBiblioteca.Controller
             var livro = contextDB.Livros.FirstOrDefault(x => x.Id == identificadoID);
                 if (livro != null)
                 livro.Ativo = false;
+            contextDB.SaveChanges();
         }
         public bool AtualizarLivro(Livro item)
         {
-            var Livro = //Definimos uma variavel para o livro
+            var findLivro = //Definimos uma variavel para o livro 
                 contextDB //Usamos o banco de dados
                 .Livros //Nossa tabela que tem os livros
                 .FirstOrDefault //Buscamos em nossa tabela o livro
                 (x => x.Id == item.Id); //Regra para realizar a busca
                        
-            if (Livro == null) 
+            if (findLivro == null) 
                 return false; 
             else
-            {                
-                Livro.DataAlteracao = DateTime.Now; 
+            {
+                findLivro.DataAlteracao = DateTime.Now; 
             }
             
             contextDB.SaveChanges(); 
