@@ -1,0 +1,27 @@
+body {           
+   
+    background-size: cover;
+    
+    width: 8cm;
+    height: 8cm;
+    text-align: center;
+    position: absolute;
+    left: 20%;
+    box-shadow: 1px 1px 8px #4800ff;
+    background-color: #ffffffc2;
+    margin-left: 330px;
+    margin-top: 230px;
+}
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+#sistema {
+
+
+}
+

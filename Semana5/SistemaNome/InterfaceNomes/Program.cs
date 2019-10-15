@@ -18,9 +18,9 @@ namespace InterfaceNomes
             var opcao = int.MinValue;
             while (opcao != 0)
             {
-                Console.WriteLine("Escolha um menu");
+                Console.WriteLine("-----Escolha um menu------\r\n");
                 Console.WriteLine("1 - Inserir Nome");                             
-                Console.WriteLine("2 - Listar Celulares");
+                Console.WriteLine("2 - Listar Nomes");
                 Console.WriteLine("0 - Sair");
 
                 opcao = int.Parse(Console.ReadLine());
@@ -28,9 +28,11 @@ namespace InterfaceNomes
                 switch (opcao)
                 {
                     case 1:
+                        Console.Clear();
                         InserirNome();
                         break;
                     case 2:
+                        Console.Clear();
                         ListarNomes();
                         break;
                     case 0:
@@ -53,10 +55,18 @@ namespace InterfaceNomes
 
             Console.WriteLine("Informe o Nome para listar");
             var nome = Console.ReadLine();
+            nameController.InserirNome(new Name()
+            {
+                Nome = nome
+            });
+            if (nome !=null)
+                Console.WriteLine("Nome cadastrado com sucesso!");
+            else
+                Console.WriteLine("Erro ao cadastrar");
         }
         public static void ListarNomes()
         {
-            nameController.GetNomes().ToList().ForEach(x => Console.WriteLine(x.Nome));
+            nameController.GetNomes().ToList().ForEach(x => Console.WriteLine($"Id: {x.Id} -- Nome: {x.Nome}"));
             Console.ReadKey();
                        
         }
