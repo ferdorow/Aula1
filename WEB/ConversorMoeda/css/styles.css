@@ -1,0 +1,13 @@
+.content_inputs {
+    width: 300px;
+    height: 100px;
+    margin: auto;
+    margin-top: 260px;
+    padding: 10px;
+    line-break: auto;
+}
+body {
+    height: 100vh;
+    background-image: url('http://3.bp.blogspot.com/-mQuhmgA45qo/Vh4AOfM2z9I/AAAAAAAAAkY/8CrkV7jYtko/s1600/cl.jpg');
+    background-size: cover;
+}

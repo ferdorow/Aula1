@@ -5,5 +5,7 @@ $(document).ready(
                 var nome = $('input[name=nome]').val();
                 alert("Bom Dia, " + nome + " Seja bem Vindo!");
 
+                alert(teste);
+
             });
     });
