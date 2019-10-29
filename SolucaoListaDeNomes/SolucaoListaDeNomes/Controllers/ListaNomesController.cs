@@ -10,7 +10,7 @@ namespace SolucaoListaDeNomes.Controllers
 {
     public class ListaNomesController : ApiController
     {
-        List<Pessoa> listaDePessoas = new List<Pessoa>()
+        List<Pessoa> ListaDePessoas = new List<Pessoa>()
         {
             new Pessoa(){ Nome = "Felipe", Idade = 55},
             new Pessoa(){ Nome = "Cliber", Idade = 22},
@@ -22,18 +22,17 @@ namespace SolucaoListaDeNomes.Controllers
             new Pessoa(){ Nome = "Ciclanex", Idade = 80},
             new Pessoa(){ Nome = "Beltranex", Idade = 21},
             new Pessoa(){ Nome = "Zeca", Idade = 52},
-
-
+            
         };
         public List<Pessoa> Get()
         {            
-            return listaDePessoas;
+            return ListaDePessoas;
         }
 
-        public List<Pessoa> Post(Pessoa values)
+        public Pessoa Post(Pessoa values)
         {
-            listaDePessoas.Add(values);
-            return listaDePessoas;
+            ListaDePessoas.Add(values);
+            return values;
 
         }
     }
