@@ -12,44 +12,10 @@ using WebApiBancoExistente.Models;
 
 namespace WebApiBancoExistente.Controllers
 {
-    public class UsuariosController : ApiController
+    public partial class UsuariosController : ApiController
     {
-        private DataBaseContext db = new DataBaseContext();
-
-        [HttpGet]
-        [Route("Api/Usuarios/CustomQuery")]
-        public object CustomUsuariosQuery()
-        {
-            var listaDeusuarios = db.Usuarios.ToList();
-
-            var retornoUsuarios = from usu in listaDeusuarios
-                                select new
-                                {
-                                    NomeUsuario = usu.Usuario1,
-                                    UsuarioId = usu.Id
-                                };
-
-            return retornoUsuarios;
-        }
-        [HttpGet]
-        [Route("Api/Carroes/CarrosComUsuarios")]
-        public object CustomUsuariosOnCarros()
-        {
-            var listUsuarios = db.Usuarios.ToList();
-            var listCarros = db.Carros.ToList();
-
-            var conteudoRetorno = from car in listCarros
-                                  join usu in listUsuarios
-                                  on car.Id equals usu.UsuInc
-                                  select new
-                                  {
-                                      UsuarioId = usu.Id,
-                                      UsuarioNome = usu.UsuInc,
-                                      carroId = car.Id,
-                                      CarroNome = car.Modelo
-                                  };
-            return conteudoRetorno;
-        }
+        
+        
 
         // GET: api/Usuarios
         public IQueryable<Usuario> GetUsuarios()
