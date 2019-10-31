@@ -19,12 +19,13 @@
                 Nome = "Fernando",
                 DataNascimento = DateTime.Parse("26/04/1983"),
                 Email = "blablabla@gmail.com"
+
                 
             });
 
             context.SaveChanges();
 
-            var proprietarioId = context.Proprietarios.FirstOrDefault(x => x.Nome == "Fernando").id;
+            var proprietarioId = context.Proprietarios.FirstOrDefault(x => x.Nome == "Fernando").Id;
 
             context.Imoveis.AddOrUpdate(x => x.ProprietarioId, new Models.Imovel()
             {

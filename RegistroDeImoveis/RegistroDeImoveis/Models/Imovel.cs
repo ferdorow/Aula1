@@ -7,7 +7,7 @@ namespace RegistroDeImoveis.Models
 {
     public class Imovel
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string Cep { get; set; }
         public string Logradouro { get; set; }
         public string Bairoo { get; set; }
