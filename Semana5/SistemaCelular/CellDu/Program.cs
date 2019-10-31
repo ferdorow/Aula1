@@ -97,7 +97,7 @@ namespace CellDu
             ListarCelular();
 
             //Informamos ao usuario que ele precisa colocar o Id para realizar a alteração
-            Console.WriteLine("Infomre o Id para alteração de registro.");
+            Console.WriteLine("Informe o Id para alteração de registro.");
             //obtemos o Id informado
             var celularId = int.Parse(Console.ReadLine());
 
