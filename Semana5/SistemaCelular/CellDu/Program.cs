@@ -11,7 +11,7 @@ namespace CellDu
     // 1 - Colocar console app para startar o projeto
     // 2 - Adicionar referencia CatalogoCelulares
     // 3 - Adicionar Entity em nosso projeto
-    // 4 - Adicionar uing ao nosso projeto Model, Controller
+    // 4 - Adicionar using ao nosso projeto Model, Controller
    
     class Program
     {
