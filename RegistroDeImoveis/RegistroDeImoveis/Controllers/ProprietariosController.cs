@@ -44,7 +44,7 @@ namespace RegistroDeImoveis.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != proprietario.id)
+            if (id != proprietario.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace RegistroDeImoveis.Controllers
             db.Proprietarios.Add(proprietario);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = proprietario.id }, proprietario);
+            return CreatedAtRoute("DefaultApi", new { id = proprietario.Id }, proprietario);
         }
 
         // DELETE: api/Proprietarios/5
@@ -112,7 +112,7 @@ namespace RegistroDeImoveis.Controllers
 
         private bool ProprietarioExists(int id)
         {
-            return db.Proprietarios.Count(e => e.id == id) > 0;
+            return db.Proprietarios.Count(e => e.Id == id) > 0;
         }
     }
 }

@@ -44,7 +44,7 @@ namespace RegistroDeImoveis.Controllers
                 return BadRequest(ModelState);
             }
 
-            if (id != imovel.id)
+            if (id != imovel.Id)
             {
                 return BadRequest();
             }
@@ -82,7 +82,7 @@ namespace RegistroDeImoveis.Controllers
             db.Imoveis.Add(imovel);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = imovel.id }, imovel);
+            return CreatedAtRoute("DefaultApi", new { id = imovel.Id }, imovel);
         }
 
         // DELETE: api/Imovels/5
@@ -112,7 +112,7 @@ namespace RegistroDeImoveis.Controllers
 
         private bool ImovelExists(int id)
         {
-            return db.Imoveis.Count(e => e.id == id) > 0;
+            return db.Imoveis.Count(e => e.Id == id) > 0;
         }
     }
 }
